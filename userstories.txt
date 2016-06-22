@@ -1,0 +1,42 @@
+STEP ONE: USER STORIES (First iteration)
+
+A. NEEDS
+
+Users
+  - make a reservation (form to collect user info)
+  - choose a restaurant
+  - party size
+  - date-time of reservation
+  - contact info + hours
+
+
+
+
+B. NICE TO HAVE
+Restaurant owners
+  - make an account
+  - see reservations + above info
+  - number of seats in restaurant
+  - create a restaurant
+
+Users
+  - make an account
+  - login
+  - logout
+  - modify reservation (change date/time/party size)
+  - put a note in on my reservation form
+  - cancel reservation
+  - see all bookings
+    - completed bookings
+    - future bookings
+  - set cuisine type
+  - sort by cuisine type
+
+C. HAPPY TO HAVE
+  - make ratings + (review)
+  - see ratings + reviews
+  - sort by ratings
+  - sort by locations of restaurants objectively
+  - sort restaurants by time availability
+  - receive email confirmation of reservation
+  - footer of stuff
