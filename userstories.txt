@@ -40,3 +40,4 @@ C. HAPPY TO HAVE
   - sort restaurants by time availability
   - receive email confirmation of reservation
   - footer of stuff
+  - pictures of food/restaurant by users of all types
