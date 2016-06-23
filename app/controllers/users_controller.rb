@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Successfully signed up!!"
-      redirect_to restaurants_path
+      redirect_to root_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       flash[:notice] = "Changes saved!"
-      redirect_to restaurants_path
+      redirect_to root_path
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     flash[:notice] = "We are sorry to see you go :("
-    redirect_to restaurants_path
+    redirect_to root_path
   end
 
   private
@@ -43,5 +43,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :phone, :password, :password_confirmation)
-  end 
+  end
 end
