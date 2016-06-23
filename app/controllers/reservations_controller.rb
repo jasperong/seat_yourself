@@ -3,7 +3,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    ensure_logged_in
     @reservation = @restaurant.reservations.build(reservation_params)
     if @reservation.save
       flash[:notice] = "Reservation successful"

@@ -13,13 +13,17 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    ensure_logged_in
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       redirect_to restaurant_path(@restaurant)
     else
-      render :new
+      render new_restaurant_path
     end
+  end
+
+  private
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :location, :logo_url, :site_url, :phone, :description, :capacity)
   end
 
 end
