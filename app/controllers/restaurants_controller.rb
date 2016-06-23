@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+    ensure_logged_in
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       redirect_to restaurant_path(@restaurant)
@@ -20,5 +21,5 @@ class RestaurantsController < ApplicationController
       render :new
     end
   end
-  
+
 end
