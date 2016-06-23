@@ -6,7 +6,6 @@
 </p>
 
 
-
 <%= form_for([@restaurant, @reservation]) do |f| %>
 <p>
 	<%= f.label :time %><br>
@@ -29,6 +28,9 @@
 
 <p>
 	<% @reservations.each do |reservation| %>
+		<%= link_to "Edit", edit_restaurant_reservation_path(@restaurant, reservation) %> |
+		<%= link_to "Delete", restaurant_reservation_path(@restaurant, reservation), method: :delete, data: {confirm: "You Sure Fool??"}  %>
+
 		<%= reservation.time %></br>
 		<%= reservation.party_size %></br>
 		<%= reservation.notes %><br /><br />

@@ -1,0 +1,10 @@
+<p>
+	<% @reservations.each do |reservation| %>
+		<%= reservation.time %></br>
+		<%= reservation.party_size %></br>
+		<%= reservation.notes %><br /><br />
+
+	<% end %>
+</p>
+
+<%= link_to "Back to All Restaurants", root_path %>
