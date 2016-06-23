@@ -19,6 +19,24 @@ before_action :load_restaurant
 		@reservation = Reservation.find(params[:id])
 	end
 
+	def edit
+		@reservation = Reservation.find(params[:id])
+	end
+
+	def update
+		@reservation = Reservation.find(params[:id])
+		if @reservation.update_attributes(reservation_params)
+			redirect_to @restaurant
+		else
+			render :edit
+		end
+	end
+
+	def destroy
+		@reservation = Reservation.find(params[:id])
+		@reservation.destroy
+		redirect_to @restaurant
+	end
 
 	private
 	def reservation_params
