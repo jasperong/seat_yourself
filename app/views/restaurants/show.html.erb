@@ -5,10 +5,12 @@
 		<%= @restaurant.description %></br>
 </p>
 
+
+
 <%= form_for([@restaurant, @reservation]) do |f| %>
 <p>
 	<%= f.label :time %><br>
-	<%= f.datetime_select:time %>
+	<%= f.datetime_select :time %>
 </p>
 <p>
 	<%= f.label :party_size %><br>
@@ -23,3 +25,13 @@
 </p>
 
 <% end %>
+
+
+<p>
+	<% @reservations.each do |reservation| %>
+		<%= reservation.time %></br>
+		<%= reservation.party_size %></br>
+		<%= reservation.notes %><br /><br />
+
+	<% end %>
+</p>
