@@ -16,9 +16,9 @@ class ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find(params[:id])
   end
-end
 
-private
-def reservation_params
-  params.require(:reservation).permit(:time, :party_size, :notes)
-end 
+  private
+  def reservation_params
+    params.require(:reservation).permit(:time, :party_size, :notes)
+  end
+end
