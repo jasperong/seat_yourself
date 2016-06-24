@@ -4,8 +4,11 @@
 		<%= @restaurant.location %></br>
 		<%= link_to "#{@restaurant.name}'s website", @restaurant.site_url %></br>
 		<%= @restaurant.description %></br>
-		<%= @restaurant.open_time %> <%= @restaurant.close_hour %>
+		<%= @restaurant.open_hour %> <%= @restaurant.close_hour %>
+		<%= @retaurant.category %>
 </p>
+
+<%= link_to "Edit Restaurant", edit_restaurant_path %>
 
 
 <% if current_user %>
