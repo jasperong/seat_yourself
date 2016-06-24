@@ -1,5 +1,12 @@
 <h1>New Restaurant</h1>
 
+<% def category_array%>
+	<% Category.all.sort do |category|%>
+	<% array = []%>
+	<% array << [category.cuisine, category.id]%>
+	<% array  %>
+<% end %>
+
 <% if current_user %>
 	<%= form_for @restaurant do |f| %>
 		<% if @restaurant.errors.any? %>
@@ -13,13 +20,15 @@
 			</div>
 		<% end %>
 
+
+
 		<div class="field">
 			<%= f.label :name %><br>
 			<%= f.text_field :name %>
 		</div>
 		<div class="field">
-			<%= f.label :cuisine %><br>
-			<%= f.text_field :cuisine %>
+			<%= f.label :category_id %><br>
+			<%= f.select :category_id options_for_select category_array  %>
 		</div>
 		<div class="field">
 			<%= f.label :location %><br>

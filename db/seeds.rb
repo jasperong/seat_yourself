@@ -8,4 +8,8 @@
 
 Restaurant.create(name: "Mitch's Pizza", location: "15 King Street West", logo_url: "http://placekitten.com/100/100", site_url: "https://gentle-plains-55678.herokuapp.com", description: "Mitch's pizza is the best pizza! EVA!", phone: '647-666-6666', capacity: 30)
 
-# Category.create(cuisine: "American")
+Category.create(cuisine: "American")
+Category.create(cuisine: "Indian")
+Category.create(cuisine: "Chinese")
+Category.create(cuisine: "Italian")
+Category.create(cuisine: "Japanese")
