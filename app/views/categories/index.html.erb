@@ -2,6 +2,6 @@
 
 <p>
   <% @categories.each do |category| %>
-  <%= link_to category.name, category_path(category) %></br>
+  <%= link_to category.cuisine, category_path(category) %></br>
   <% end %>
 </p>
