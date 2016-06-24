@@ -1,3 +1,5 @@
+<h1>New Restaurant</h1>
+
 <% if current_user %>
 	<%= form_for @restaurant do |f| %>
 		<% if @restaurant.errors.any? %>
@@ -16,8 +18,8 @@
 			<%= f.text_field :name %>
 		</div>
 		<div class="field">
-			<%= f.label :category %><br>
-			<%= f.text_field :category %>
+			<%= f.label :cuisine %><br>
+			<%= f.text_field :cuisine %>
 		</div>
 		<div class="field">
 			<%= f.label :location %><br>
