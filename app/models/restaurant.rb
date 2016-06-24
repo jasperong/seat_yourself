@@ -1,13 +1,17 @@
 class Restaurant < ActiveRecord::Base
-	validates :name, :logo_url, :site_url, :location, :capacity, :open_hour, :close_hour, :cuisine, presence: true
+	validates :name, :logo_url, :site_url, :location, :capacity, :open_hour, :close_hour, :category, presence: true
 	validates :capacity, numericality: {only_integer: true}
 
 	has_many :reservations
 	has_many :users, through: :reservations
-	belongs_to :categories
+	
 
 	def available?(party_size, time)
 		party_size <= available_capacity(time)
+	end
+
+	def self.categories
+		['italian', 'indian', 'american']
 	end
 
 	private
