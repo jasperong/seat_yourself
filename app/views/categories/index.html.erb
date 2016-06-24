@@ -1,1 +1,7 @@
-<%= link_to "What kinda grab you want fool?", category_path(@category)  %>
+<h1>What kinda grub you want fool?</h1>
+
+<p>
+  <% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category) %></br>
+  <% end %>
+</p>

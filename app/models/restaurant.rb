@@ -4,6 +4,8 @@ class Restaurant < ActiveRecord::Base
 
   has_many :reservations
   has_many :users, through: :reservations
+  belongs_to :categories 
+
 
   def available?(party_size, time)
     party_size > 0 && party_size <= available_capacity(time)
