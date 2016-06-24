@@ -6,7 +6,7 @@ class Restaurant < ActiveRecord::Base
   has_many :users, through: :reservations
 
   def available?(party_size, time)
-    party_size > 0 && party_size <= available_capacity(time)
+    party_size <= available_capacity(time)
   end
 
   private
@@ -14,6 +14,6 @@ class Restaurant < ActiveRecord::Base
   def available_capacity(time)
     # capacity - reservations.where(time: time.beginning_of_hour..time.end_of_hour).sum(:party_size)
     # Alternative expression of the time range, also works
-    capacity - reservations.where(time: (time > open_time && time < close_time) && (time.beginning_of_hour..time.end_of_hour).sum(:party_size))
+    capacity - reservations.where(time: time.beginning_of_hour..time.end_of_hour).sum(:party_size)
   end
 end
