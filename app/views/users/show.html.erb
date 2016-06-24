@@ -1,0 +1,6 @@
+<h1>Welcome <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %>!!</h1>
+
+<p>Email Address: <%= @user.email %></p>
+<p>Phone Number: <%= @user.phone %></p>
+
+<%= link_to "Edit profile", edit_user_path(@user) %>
