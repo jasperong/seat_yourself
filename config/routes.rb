@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'categories/show'
+
   root 'restaurants#index'
   resources :restaurants do
     resources :reservations
