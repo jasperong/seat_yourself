@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160624191601) do
     t.datetime "updated_at",  null: false
     t.integer  "open_hour"
     t.integer  "close_hour"
-    t.string   "category"
+    t.string   "category_id"
   end
 
   create_table "users", force: :cascade do |t|
