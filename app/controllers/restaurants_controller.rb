@@ -12,6 +12,9 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+
+    ####### Find some way to connect category to restaurant ############
+    @categories = Restaurant.all.category
   end
 
   def create
