@@ -13,3 +13,4 @@ Category.create(cuisine: "Indian")
 Category.create(cuisine: "Chinese")
 Category.create(cuisine: "Italian")
 Category.create(cuisine: "Japanese")
+fb3d
