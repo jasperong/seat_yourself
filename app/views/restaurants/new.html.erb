@@ -1,12 +1,12 @@
 <h1>New Restaurant</h1>
 
-<% def category_array%>
+<!-- <% def category_array%>
   <% @categories.sort.each do |category| %>
     <% array = [] %>
     <% array << [category.cuisine, category.id] %>
     <% array  %>
   <% end %>
-<% end %>
+<% end %> -->
 
 <% if current_user %>
   <%= form_for @restaurant do |f| %>
@@ -27,7 +27,7 @@
     </div>
     <div class="field">
       <%= f.label :category_id %><br>
-      <%= f.select :category_id, options_for_select(category_array)  %>
+      <%= f.collection_select(:category_id, Category.all, :id, :cuisine)  %>
     </div>
     <div class="field">
       <%= f.label :location %><br>

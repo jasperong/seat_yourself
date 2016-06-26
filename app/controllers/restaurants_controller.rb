@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-    @categories = Restaurant.all.categories 
+    @categories = Category.all 
   end
 
   def create
