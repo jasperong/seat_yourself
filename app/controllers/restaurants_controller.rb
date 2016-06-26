@@ -32,6 +32,7 @@ class RestaurantsController < ApplicationController
 	def update
 		@restaurant = Restaurant.find(params[:id])
 		if @restaurant.update_attributes(restaurant_params)
+			flash[:notice] = "Restaurant Successfully Edited!"
 			redirect_to @restaurant
 		else
 			render :edit
@@ -41,7 +42,8 @@ class RestaurantsController < ApplicationController
 	def destroy
 			@restaurant = Restaurant.find(params[:id])
 			@restaurant.destroy
-			redirect_to restaurant_url
+			flash[:notice] = "Restaurant Successfully Removed! Foo!"
+			redirect_to root_path
 	end
 
 	private
