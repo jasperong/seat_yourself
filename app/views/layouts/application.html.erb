@@ -9,6 +9,15 @@
 
 <body>
 
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <p id="alert"><%= flash[:alert] %></p>
+  <% end %>
+
+
   <header> <%= link_to image_tag("http://placekitten.com/60/60"), root_path %>
     <h1>SeatYoSelfFool</h1>
     <p id="userinfo">
