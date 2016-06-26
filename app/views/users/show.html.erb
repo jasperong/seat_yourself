@@ -8,5 +8,5 @@
 <p>Your Restaurants</p>
 
 <% @user.owned_restaurants.each do |owned| %>
- <%= owned.name %>
+ <%= link_to owned.name, restaurant_path(owned) %></br>
 <% end  %>
