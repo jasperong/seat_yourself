@@ -17,7 +17,7 @@
   <%= form_for([@restaurant, @reservation]) do |f| %>
   <p>
     <%= f.label :time %><br>
-    <%= f.datetime_select :time %>
+    <%= f.datetime_select :time, ampm: true, minute_step: 30 %>
   </p>
   <p>
     <%= f.label :party_size %><br>
