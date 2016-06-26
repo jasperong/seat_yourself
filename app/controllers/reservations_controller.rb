@@ -12,8 +12,8 @@ before_action :find_reservation, only: [:show, :edit, :update, :destroy]
       flash[:notice] = "Reservation successful"
       redirect_to restaurant_path(@restaurant)
     else
-      flash[:notice] = "Error: Did not work fool."
-      render :new
+      flash[:notice] = "Restaurant is full."
+      redirect_to restaurant_path(@restaurant)
     end
   end
 
