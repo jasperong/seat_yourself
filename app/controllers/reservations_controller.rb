@@ -14,7 +14,6 @@ before_action :find_reservation, only: [:show, :edit, :update, :destroy]
     else
       flash[:notice] = "Restaurant is full."
       redirect_to restaurant_path(@restaurant)
-
     end
   end
 
