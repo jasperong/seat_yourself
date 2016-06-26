@@ -1,35 +1,53 @@
 class RestaurantsController < ApplicationController
 
-  def index
-    @restaurants = Restaurant.all
-  end
+	def index
+		@restaurants = Restaurant.all
+	end
 
-  def show
-    @restaurant = Restaurant.find(params[:id])
-    @reservation = @restaurant.reservations.build
-    @reservations = Reservation.where(restaurant_id: @restaurant.id)
-  end
-
-
-  def new
-    @restaurant = Restaurant.new
-    @categories = Category.all 
-  end
-
-  def create
-    @restaurant = Restaurant.new(restaurant_params)
-    if @restaurant.save
-      redirect_to restaurant_path(@restaurant)
-    else
-      render new_restaurant_path
-    end
-  end
+	def show
+		@restaurant = Restaurant.find(params[:id])
+		@reservation = @restaurant.reservations.build
+		@reservations = Reservation.where(restaurant_id: @restaurant.id)
+	end
 
 
-  private
-  def restaurant_params
-    params.require(:restaurant).permit(:name, :location, :logo_url, :site_url, :phone, :description, :capacity, :open_hour, :close_hour, :category)
-  end
+	def new
+		@restaurant = Restaurant.new
+		@categories = Category.all
+	end
+
+	def create
+		@restaurant = Restaurant.new(restaurant_params)
+		if @restaurant.save
+			redirect_to restaurant_path(@restaurant)
+		else
+			render new_restaurant_path
+		end
+	end
+
+	def edit
+		@restaurant = Restaurant.find(params[:id])
+	end
+
+	def update
+		@restaurant = Restaurant.find(params[:id])
+		if @restaurant.update_attributes(restaurant_params)
+			redirect_to @restaurant
+		else
+			render :edit
+		end
+	end
+
+	def destroy
+			@restaurant = Restaurant.find(params[:id])
+			@restaurant.destroy
+			redirect_to restaurant_url
+	end
+
+	private
+	def restaurant_params
+		params.require(:restaurant).permit(:name, :location, :logo_url, :site_url, :phone, :description, :capacity, :open_hour, :close_hour, :category)
+	end
 
 
 end
