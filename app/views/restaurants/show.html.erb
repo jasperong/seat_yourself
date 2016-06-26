@@ -6,7 +6,7 @@
     Description: <%= @restaurant.description %></br>
     Phone Number: <%= @restaurant.phone %></br>
 
-    Hours: <%= @restaurant.open_hour %> - <%= @restaurant.close_hour %></br>
+    Hours: <%= @restaurant.open_hour.strftime("%I:%M %p") %> - <%= @restaurant.close_hour.strftime("%I:%M %p") %></br>
     Cuisine type: <%= @restaurant.category_id %>
 </p>
 
