@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Restaurant.create(name: "Mitch's Pizza", location: "15 King Street West", logo_url: "http://placekitten.com/100/100", site_url: "https://gentle-plains-55678.herokuapp.com", description: "Mitch's pizza is the best pizza! EVA!", phone: '647-666-6666', capacity: 30)
+Restaurant.create(name: "Mitch's Pizza", location: "15 King Street West", logo_url: "http://placekitten.com/100/100", site_url: "https://gentle-plains-55678.herokuapp.com", description: "Mitch's pizza is the best pizza! EVA!", phone: '647-666-6666', capacity: 30, open_hour: 9, close_hour: 18, category_id: '1')
 
 Category.create(cuisine: "American")
 Category.create(cuisine: "Indian")
