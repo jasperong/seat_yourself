@@ -5,8 +5,9 @@
     <%= link_to "#{@restaurant.name}'s website", @restaurant.site_url %></br>
     Description: <%= @restaurant.description %></br>
     Phone Number: <%= @restaurant.phone %></br>
-    Hours: <%= @restaurant.open_hour %> - <%= @restaurant.close_hour %>
-    <%= @restaurant.category_id %>
+
+    Hours: <%= @restaurant.open_hour %> - <%= @restaurant.close_hour %></br>
+    Cuisine type: <%= @restaurant.category_id %>
 </p>
 
 <%= link_to "Edit", edit_restaurant_path %> |
