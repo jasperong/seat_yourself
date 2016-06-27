@@ -8,7 +8,9 @@ class Restaurant < ActiveRecord::Base
   belongs_to :category
 
   def available?(party_size, time)
-    party_size <= available_capacity(time)
+    if party_size != nil
+      party_size <= available_capacity(time)
+    end
   end
 
   private

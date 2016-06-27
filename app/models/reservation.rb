@@ -15,6 +15,8 @@ class Reservation < ActiveRecord::Base
   end
 
   def is_party_size_valid
-    party_size > 0
+    if party_size != nil
+      party_size > 0
+    end
   end
 end
