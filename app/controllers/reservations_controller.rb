@@ -4,6 +4,7 @@ before_action :load_restaurant
 before_action :find_reservation, only: [:show, :edit, :update, :destroy]
 
   def new
+    @reservation = @restaurant.reservations.build(reservation_params)
   end
 
   def create
@@ -12,7 +13,7 @@ before_action :find_reservation, only: [:show, :edit, :update, :destroy]
       flash[:notice] = "Reservation successful"
       redirect_to restaurant_path(@restaurant)
     else
-      flash[:notice] = "Restaurant is full."
+      flash[:notice] = "Not the error I'm looking for."
       redirect_to restaurant_path(@restaurant)
     end
   end

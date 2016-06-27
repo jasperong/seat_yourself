@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def show
+    @reservations = @user.reservations
   end
 
   def new

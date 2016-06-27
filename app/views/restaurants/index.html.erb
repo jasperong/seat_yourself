@@ -1,12 +1,8 @@
-<p id="print_restaurants">
-	<%= link_to "Create New Restaurant", new_restaurant_path %>
-</p>
-
 
 <p id="print_restaurants">
-	<% @restaurants.each do |restaurant| %>
-		<%= link_to image_tag(restaurant.logo_url), restaurant_path(restaurant) %><br />
-		<%= link_to restaurant.name, restaurant_path(restaurant) %></br>
-		<%= restaurant.location %></br>
-	<% end %>
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to image_tag(restaurant.logo_url), restaurant_path(restaurant) %><br />
+    <%= link_to restaurant.name, restaurant_path(restaurant) %></br>
+    <%= restaurant.location %></br>
+  <% end %>
 </p>

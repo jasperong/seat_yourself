@@ -1,53 +1,53 @@
 <div class="form">
-	<h1><%= image_tag(@restaurant.logo_url) %><br>
-		<%= @restaurant.name %></h1>
-	<p>
-			<%= @restaurant.location %></br>
-			<%= link_to "#{@restaurant.name}'s website", @restaurant.site_url %></br>
-			Description: <%= @restaurant.description %></br>
-			Phone Number: <%= @restaurant.phone %></br>
+  <h1><%= image_tag(@restaurant.logo_url) %><br>
+    <%= @restaurant.name %></h1>
+  <p>
+      <%= @restaurant.location %></br>
+      <%= link_to "#{@restaurant.name}'s website", @restaurant.site_url %></br>
+      Description: <%= @restaurant.description %></br>
+      Phone Number: <%= @restaurant.phone %></br>
 
-			Hours: <%= @restaurant.open_hour.strftime("%I:%M %p") %> - <%= @restaurant.close_hour.strftime("%I:%M %p") %><br>
-			<%= @restaurant.category %>
-	</p>
+      Hours: <%= @restaurant.open_hour.strftime("%I:%M %p") %> - <%= @restaurant.close_hour.strftime("%I:%M %p") %><br>
+      <%= @restaurant.category.cuisine %>
+  </p>
 
-	<%= link_to "Edit", edit_restaurant_path %> |
-	<%= link_to "Delete", @restaurant , method: :delete, data: {confirm: "you sure?"} %>
+  <%= link_to "Edit", edit_restaurant_path %> |
+  <%= link_to "Delete", @restaurant , method: :delete, data: {confirm: "you sure?"} %>
 
-	<% if current_user %>
-		<%= form_for([@restaurant, @reservation]) do |f| %>
-		<p>
-			<%= f.label :time %><br>
-			<%= f.datetime_select :time, ampm: true, minute_step: 30 %>
-		</p>
-		<p>
-			<%= f.label :party_size %><br>
-			<%= f.number_field :party_size %>
-		</p>
-		<p>
-			<%= f.label :notes %><br>
-			<%= f.text_area :notes %>
-		</p>
-		<p>
-			<%= f.submit "Save" %>
-		</p>
-		<% end %>
-	<% end %>
+  <% if current_user %>
+    <%= form_for([@restaurant, @reservation]) do |f| %>
+    <p>
+      <%= f.label :time %><br>
+      <%= f.datetime_select :time, ampm: true, minute_step: 30 %>
+    </p>
+    <p>
+      <%= f.label :party_size %><br>
+      <%= f.number_field :party_size %>
+    </p>
+    <p>
+      <%= f.label :notes %><br>
+      <%= f.text_area :notes %>
+    </p>
+    <p>
+      <%= f.submit "Save" %>
+    </p>
+    <% end %>
+  <% end %>
 
 
-	<% if current_user %>
-		<p>
-			<% @reservations.each do |reservation| %>
-				<%= link_to "Edit", edit_restaurant_reservation_path(@restaurant, reservation) %> |
-				<%= link_to "Delete", restaurant_reservation_path(@restaurant, reservation), method: :delete, data: {confirm: "You Sure Fool??"}  %>
+  <% if current_user %>
+    <p>
+      <% @reservations.each do |reservation| %>
+        <%= link_to "Edit", edit_restaurant_reservation_path(@restaurant, reservation) %> |
+        <%= link_to "Delete", restaurant_reservation_path(@restaurant, reservation), method: :delete, data: {confirm: "You Sure Fool??"}  %>
 
-				<%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>t
-				<%= reservation.party_size %></br>
-				<%= reservation.notes %><br /><br />
+        <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>t
+        <%= reservation.party_size %></br>
+        <%= reservation.notes %><br /><br />
 
-			<% end %>
-		</p>
-	<% end %>
+      <% end %>
+    </p>
+  <% end %>
 
-	<%= link_to "Back to All Restaurants", root_path %>
+  <%= link_to "Back to All Restaurants", root_path %>
 </div>

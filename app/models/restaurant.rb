@@ -14,8 +14,6 @@ class Restaurant < ActiveRecord::Base
   private
 
   def available_capacity(time)
-    # capacity - reservations.where(time: time.beginning_of_hour..time.end_of_hour).sum(:party_size)
-    # Alternative expression of the time range, also works
     capacity - reservations.where(time: time.beginning_of_hour..time.end_of_hour).sum(:party_size)
   end
 end
