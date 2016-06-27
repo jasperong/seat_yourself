@@ -7,7 +7,7 @@
     Phone Number: <%= @restaurant.phone %></br>
 
     Hours: <%= @restaurant.open_hour.strftime("%I:%M %p") %> - <%= @restaurant.close_hour.strftime("%I:%M %p") %><br>
-    <%= @restaurant.category %>
+    <%= @restaurant.category.cuisine %>
 </p>
 
 <%= link_to "Edit", edit_restaurant_path %> |
@@ -15,6 +15,16 @@
 
 <% if current_user %>
   <%= form_for([@restaurant, @reservation]) do |f| %>
+    <% if @reservation.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% @reservation.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <p>
     <%= f.label :time %><br>
     <%= f.datetime_select :time, ampm: true, minute_step: 30 %>

@@ -1,4 +1,6 @@
-<h1>What kinda grub you want fool?</h1>
-<p>
-  
-</p>
+<h1><%= @category.cuisine %></h1>
+  <% @category.restaurants.each do |restaurant| %>
+    <p>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </p>
+  <% end %>
