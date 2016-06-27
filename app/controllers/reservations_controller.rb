@@ -4,7 +4,7 @@ before_action :load_restaurant
 before_action :find_reservation, only: [:show, :edit, :update, :destroy]
 
   def new
-    @reservation = @restaurant.reservations.new
+    @reservation = @restaurant.reservations.build
   end
 
   def create
