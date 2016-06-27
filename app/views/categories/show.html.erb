@@ -1,11 +1,8 @@
 <div class="form">
-
-
-<h1><%= @category.cuisine %></h1>
-	<% @category.restaurants.each do |restaurant| %>
-		<p>
-			<%= link_to restaurant.name, restaurant_path(restaurant) %>
-		</p>
-	<% end %>
-
+  <h1><%= @category.cuisine %></h1>
+  <% @category.restaurants.each do |restaurant| %>
+  <p>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  </p>
+  <% end %>
 </div>

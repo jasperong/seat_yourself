@@ -2,13 +2,13 @@
   <h1><%= image_tag(@restaurant.logo_url) %><br>
     <%= @restaurant.name %></h1>
   <p>
-      <%= @restaurant.location %></br>
-      <%= link_to "#{@restaurant.name}'s website", @restaurant.site_url %></br>
-      Description: <%= @restaurant.description %></br>
-      Phone Number: <%= @restaurant.phone %></br>
+    <%= @restaurant.location %></br>
+    <%= link_to "#{@restaurant.name}'s website", @restaurant.site_url %></br>
+    Description: <%= @restaurant.description %></br>
+    Phone Number: <%= @restaurant.phone %></br>
 
-      Hours: <%= @restaurant.open_hour.strftime("%I:%M %p") %> - <%= @restaurant.close_hour.strftime("%I:%M %p") %><br>
-      <%= @restaurant.category.cuisine %>
+    Hours: <%= @restaurant.open_hour.strftime("%I:%M %p") %> - <%= @restaurant.close_hour.strftime("%I:%M %p") %><br>
+    <%= @restaurant.category.cuisine %>
   </p>
 
   <%= link_to "Edit", edit_restaurant_path %> |

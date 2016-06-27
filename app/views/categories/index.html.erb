@@ -1,11 +1,8 @@
 <div class="form">
-
-	<h2>What kinda grub you want fool?</h2>
-
-
-	<p>
-		<% @categories.each do |category| %>
-		<%= link_to category.cuisine, category_path(category) %></br>
-		<% end %>
-	</p>
+    <h2>What kinda grub you want fool?</h2>
+  <p>
+    <% @categories.each do |category| %>
+      <%= link_to category.cuisine, category_path(category) %></br>
+    <% end %>
+</p>
 </div>
