@@ -1,3 +1,80 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(https://fonts.googleapis.com/css?family=Raleway|Open+Sans+Condensed:300|Poiret+One|Amatic+SC:400,700);
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+// Background Image
+
+html {
+	background: url("coffee.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+// Header (from application.html.erb)
+
+a{
+	color: black;
+}
+
+h1 a{
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5{
+	color: black;
+	font-family: 'Amatic SC', cursive;}
+
+.logotitle{
+	float:right;
+	margin-right: 5%;
+	height: 60px;
+}
+
+header{
+	// height: 60px;
+	margin-bottom: 30px;
+	padding-left: 15%;
+	// padding-left: 20px;
+}
+
+header h1 {
+	font-size: 56px;
+	display:inline-block;
+	line-height: 60px;
+}
+
+#userinfo {
+	font-family: 'Raleway', sans-serif;
+	padding-top: 120px;
+	padding-bottom: 20px;
+
+}
+
+header p {
+	font-family: 'Raleway', sans-serif;
+	padding-bottom: 15px;
+}
+
+// Body
+
+#print_restaurants {
+	font-family: 'Raleway', sans-serif;
+	padding-top: 25px;
+	padding-left: 15%;
+}
+
+.form {
+	font-family: 'Raleway', sans-serif;
+	padding-top: 25px;
+	padding-left: 15%;
+}
