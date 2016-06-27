@@ -11,7 +11,7 @@ class Reservation < ActiveRecord::Base
 
   # Make sure restaurant has open_hour and close_hour
   def is_restaurant_open
-    errors.add(:restaurant, "is closed!") unless time > restaurant.open_hour && time < restaurant.close_hour
+    errors.add(:restaurant, "is closed!") unless time.hour > restaurant.open_hour.hour && time.hour < restaurant.close_hour.hour
   end
 
   def is_party_size_valid
