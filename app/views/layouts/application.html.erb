@@ -16,11 +16,16 @@
 		<p id="alert"><%= flash[:alert] %></p>
 	<% end %>
 
+	<% if flash[:error] %>
+		<p id="error"><%= flash[:error] %></p>
+	<% end %>
+
 	<header>
 		<div class="logotitle">
 			<%= link_to image_tag("http://www.sugarmarina-fashion.com/images/icon-restaurant.png"), root_path %>
 			<h1><%= link_to "SeatYoSelfFool", root_path %> </h1>
 		</div>
+
 
 			<p id="userinfo">
 				<% if current_user %>
