@@ -35,8 +35,8 @@ h1, h2, h3, h4, h5{
 	font-family: 'Amatic SC', cursive;}
 
 .logotitle{
-	float:right;
-	margin-right: 5%;
+	float:left;
+	margin-left: 0;
 	height: 60px;
 }
 
@@ -55,9 +55,14 @@ header h1 {
 
 #userinfo {
 	font-family: 'Raleway', sans-serif;
-	padding-top: 120px;
-	padding-bottom: 20px;
+	padding-top: 42px;
+	padding-right: 20px;
+	float:right;
+	display: inline;
+}
 
+#findcuisine {
+	padding-top: 150px;
 }
 
 header p {
