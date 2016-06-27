@@ -1,26 +1,43 @@
 <h1>Welcome <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %>!!</h1>
 
-<% @user.reservations.each do |reservation| %>
-  <% @user.restaurants.each do |restaurant| %>
-
-<%= link_to "Delete", restaurant_reservation_path(restaurant, reservation), method: :delete %>
-  <p>Location: <%= restaurant.name %></p>
-  <p>Address: <%= restaurant.location %></p>
-  <% end %>
-<% end %>
-
+<h2> My Profile </h2>
+<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
 <p>Email Address: <%= @user.email %></p>
 <p>Phone Number: <%= @user.phone %></p>
 
 <%= link_to "Edit profile", edit_user_path(@user) %>
 
-<p>Your Restaurants</p>
+
+<h3> My Reservations</h3>
+<% @user.reservations.each do |reservation| %>
+  <% @user.restaurants.each do |restaurant| %>
+
+<%= link_to "Delete", restaurant_reservation_path(restaurant, reservation), method: :delete %>
+<ul>
+  <li>
+  Restaurant: <%= restaurant.name %></br>
+  Address: <%= restaurant.location %></br>
+  Date/Time: <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>
+  Party size: <%= reservation.party_size %></br>
+  Notes: <%= reservation.notes %>
+  </li>
+</ul>
+  <% end %>
+<% end %>
+
+<h3>My Restaurants</h3>
+<h4><%= link_to "Create New Restaurant", new_restaurant_path %></h4></br>
 
 <% @user.owned_restaurants.each do |owned| %>
-  <% @reservations.each do |reservation| %>
   <%= link_to owned.name, restaurant_path(owned) %></br>
-  Name: <%= reservation.user.first_name %> <%= reservation.user.last_name %></br>
-  Party size: <%= reservation.party_size %></br>
-  Date/Time: <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>
-  <% end %>
+  <ul>
+    <% @reservations.each do |reservation| %>
+    <li>Name: <%= reservation.user.first_name %> <%= reservation.user.last_name %></br>
+    Party size: <%= reservation.party_size %></br>
+    Date/Time: <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>
+    Notes: <%= reservation.notes %></br></br>
+    <% end %>
+    </li>
+  </ul>
+
 <% end  %>
