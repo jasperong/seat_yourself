@@ -1,43 +1,46 @@
-<h1>Welcome <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %>!!</h1>
+<div class = "form"
 
-<h2> My Profile </h2>
-<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
-<p>Email Address: <%= @user.email %></p>
-<p>Phone Number: <%= @user.phone %></p>
+  <h1>Welcome <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %>!!</h1>
 
-<%= link_to "Edit profile", edit_user_path(@user) %>
+  <h2> My Profile </h2>
+  <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+  <p>Email Address: <%= @user.email %></p>
+  <p>Phone Number: <%= @user.phone %></p>
+
+  <%= link_to "Edit profile", edit_user_path(@user) %><br /><br />
 
 
-<h3> My Reservations</h3>
-<% @user.reservations.each do |reservation| %>
-  <% @user.restaurants.each do |restaurant| %>
+  <h2> My Reservations</h2>
+  <% @user.reservations.each do |reservation| %>
+    <% @user.restaurants.each do |restaurant| %>
 
-<%= link_to "Delete", restaurant_reservation_path(restaurant, reservation), method: :delete, data: {confirm: "Are you sure?"} %>
-<ul>
-  <li>
-  Restaurant: <%= restaurant.name %></br>
-  Address: <%= restaurant.location %></br>
-  Date/Time: <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>
-  Party size: <%= reservation.party_size %></br>
-  Notes: <%= reservation.notes %>
-  </li>
-</ul>
-  <% end %>
-<% end %>
-
-<h3>My Restaurants</h3>
-<h4><%= link_to "Create New Restaurant", new_restaurant_path %></h4></br>
-
-<% @user.owned_restaurants.each do |owned| %>
-  <%= link_to owned.name, restaurant_path(owned) %></br>
+  <%= link_to "Delete", restaurant_reservation_path(restaurant, reservation), method: :delete %>
   <ul>
-    <% @reservations.each do |reservation| %>
-    <li>Name: <%= reservation.user.first_name %> <%= reservation.user.last_name %></br>
-    Party size: <%= reservation.party_size %></br>
+    <li>
+    Restaurant: <%= restaurant.name %></br>
+    Address: <%= restaurant.location %></br>
     Date/Time: <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>
-    Notes: <%= reservation.notes %></br></br>
-    <% end %>
+    Party size: <%= reservation.party_size %></br>
+    Notes: <%= reservation.notes %>
     </li>
   </ul>
+    <% end %>
+  <% end %>
 
-<% end  %>
+  <br />
+  <h2>My Restaurants | <%= link_to "Create New Restaurant", new_restaurant_path %></h2></br>
+
+  <% @user.owned_restaurants.each do |owned| %>
+    <%= link_to owned.name, restaurant_path(owned) %></br>
+    <ul>
+      <% @reservations.each do |reservation| %>
+      <li>Name: <%= reservation.user.first_name %> <%= reservation.user.last_name %></br>
+      Party size: <%= reservation.party_size %></br>
+      Date/Time: <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>
+      Notes: <%= reservation.notes %></br></br>
+      <% end %>
+      </li>
+    </ul>
+
+  <% end  %>
+</div>
