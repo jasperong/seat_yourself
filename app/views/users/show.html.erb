@@ -5,7 +5,7 @@
 
 <%= link_to "Delete", restaurant_reservation_path(restaurant, reservation), method: :delete %>
   <p>Location: <%= restaurant.name %></p>
-  <p>Address: <%= restaurant.address %></p>
+  <p>Address: <%= restaurant.location %></p>
   <% end %>
 <% end %>
 
@@ -17,5 +17,10 @@
 <p>Your Restaurants</p>
 
 <% @user.owned_restaurants.each do |owned| %>
- <%= link_to owned.name, restaurant_path(owned) %></br>
+  <% @reservations.each do |reservation| %>
+  <%= link_to owned.name, restaurant_path(owned) %></br>
+  Name: <%= reservation.user.first_name %> <%= reservation.user.last_name %></br>
+  Party size: <%= reservation.party_size %></br>
+  Date/Time: <%= reservation.time.strftime("%B %-d, %Y %-l:%M %p") %></br>
+  <% end %>
 <% end  %>
