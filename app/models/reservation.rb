@@ -11,7 +11,7 @@ class Reservation < ActiveRecord::Base
 
   # Make sure restaurant has open_hour and close_hour
   def is_restaurant_open
-    errors.add(:restaurant, "is closed!") unless time.hour > self.restaurant.open_hour.hour && time.hour < self.restaurant.close_hour.hour
+    errors.add(:restaurant, "is closed!") unless time.hour >= self.restaurant.open_hour.hour && time.hour < self.restaurant.close_hour.hour
   end
 
   def is_future

@@ -19,8 +19,14 @@
 
 #notice, #alert, #error {
   padding-left: 15%;
-  color: red;
   font-size: 24px;
   font-family: 'Raleway', sans-serif;
+}
 
+#error, #alert {
+  color: red;
+}
+
+#notice {
+  color: green;
 }
