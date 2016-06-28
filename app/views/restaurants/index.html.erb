@@ -1,3 +1,4 @@
+<h1 class="index-h1">All Restaurants</h1>
 <p id="print_restaurants">
   <% @restaurants.each do |restaurant| %>
     <%= link_to image_tag(restaurant.logo_url, :size => "80x80"), restaurant_path(restaurant) %><br />
