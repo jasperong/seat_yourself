@@ -6,82 +6,82 @@
 *,
 *:after,
 *:before {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 // Background Image
 
 html {
-  background: url("coffee.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	background: url("coffee72.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 // Header (from application.html.erb)
 
 a{
-  color: black;
+	color: black;
 }
 
 h1 a{
-  text-decoration: none;
+	text-decoration: none;
 }
 
 h1, h2, h3, h4, h5{
-  color: black;
-  font-family: 'Amatic SC', cursive;
+	color: black;
+	font-family: 'Amatic SC', cursive;
 }
 
 .logotitle{
-  float:left;
-  margin-left: 0;
-  height: 60px;
+	float:left;
+	margin-left: 0;
+	height: 60px;
 }
 
 header{
-  // height: 60px;
-  margin-bottom: 30px;
-  padding-left: 15%;
-  // padding-left: 20px;
+	// height: 60px;
+	margin-bottom: 30px;
+	padding-left: 15%;
+	// padding-left: 20px;
 }
 
 header h1 {
-  font-size: 56px;
-  display:inline-block;
-  line-height: 60px;
+	font-size: 56px;
+	display:inline-block;
+	line-height: 60px;
 }
 
 #userinfo {
-  font-family: 'Raleway', sans-serif;
-  padding-top: 42px;
-  padding-right: 20px;
-  float:right;
-  display: inline;
+	font-family: 'Raleway', sans-serif;
+	padding-top: 42px;
+	padding-right: 20px;
+	float:right;
+	display: inline;
 }
 
 #findcuisine {
-  padding-top: 150px;
+	padding-top: 150px;
 }
 
 header p {
-  font-family: 'Raleway', sans-serif;
-  padding-bottom: 15px;
+	font-family: 'Raleway', sans-serif;
+	padding-bottom: 15px;
 }
 
 // Body
 
 #print_restaurants {
-  font-family: 'Raleway', sans-serif;
-  padding-top: 25px;
-  padding-left: 15%;
+	font-family: 'Raleway', sans-serif;
+	padding-top: 25px;
+	padding-left: 15%;
 }
 
 .form {
-  font-family: 'Raleway', sans-serif;
-  padding-top: 25px;
-  padding-left: 15%;
+	font-family: 'Raleway', sans-serif;
+	padding-top: 25px;
+	padding-left: 15%;
 }
  .index-h1 {
    padding-left: 15%;

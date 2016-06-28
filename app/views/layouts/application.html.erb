@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SeatYoSelfFool</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>SeatYoSelfFool</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 
 <body>
-  <header>
-    <div class="logotitle">
-      <%= link_to image_tag("http://www.sugarmarina-fashion.com/images/icon-restaurant.png"), root_path %>
-      <h1><%= link_to "SeatYoSelfFool", root_path %> </h1>
-    </div>
+	<header>
+		<div class="logotitle">
+			<%= link_to image_tag("http://www.sugarmarina-fashion.com/images/icon-restaurant.png"), root_path %>
+			<h1><%= link_to "SeatYoSelf", root_path %> </h1>
+		</div>
 
-    <p id="userinfo">
-      <% if current_user %>
-        Signed in as <%= link_to current_user.email, user_path(current_user) %>. <%= link_to "Log out", session_path(:current), method: :delete %>
-      <% else %>
-        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-      <% end %>
-    </p>
+		<p id="userinfo">
+			<% if current_user %>
+				Signed in as <%= link_to current_user.email, user_path(current_user) %>. <%= link_to "Log out", session_path(:current), method: :delete %>
+			<% else %>
+				<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+			<% end %>
+		</p>
 
-    <p id="findcuisine">
-      <%= link_to "Find Restaurant by Cuisine", categories_path %>
-    </p>
-  </header>
+		<p id="findcuisine">
+			<%= link_to "Find Restaurant by Cuisine", categories_path %>
+		</p>
+	</header>
 
 
-  <p id="print_restaurants">
-    <% if flash[:notice] %>
-    <p id="notice"><%= flash[:notice] %></p>
-    <% end %>
+	<p id="print_restaurants">
+		<% if flash[:notice] %>
+		<p id="notice"><%= flash[:notice] %></p>
+		<% end %>
 
-    <% if flash[:alert] %>
-    <p id="alert"><%= flash[:alert] %></p>
-    <% end %>
+		<% if flash[:alert] %>
+		<p id="alert"><%= flash[:alert] %></p>
+		<% end %>
 
-    <% if flash[:error] %>
-    <p id="error"><%= flash[:error] %></p>
-    <% end %>
-    <%= yield %>
-  </p>
+		<% if flash[:error] %>
+		<p id="error"><%= flash[:error] %></p>
+		<% end %>
+		<%= yield %>
+	</p>
 </body>
 </html>
