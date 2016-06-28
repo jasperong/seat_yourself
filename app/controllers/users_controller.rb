@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @reservations = @user.reservations
+    @user = current_user
   end
 
   def new

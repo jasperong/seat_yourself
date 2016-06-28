@@ -1,16 +1,16 @@
 <div class = "form">
 
-  <h1>Welcome <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %>!!</h1>
+  <h1>Welcome <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>!!</h1>
 
   <h2> My Profile </h2>
-  <p>Name: <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
-  <p>Email Address: <%= @user.email %></p>
-  <p>Phone Number: <%= number_to_phone(@user.phone, area_code: true) %></p>
+  <p>Name: <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+  <p>Email Address: <%= current_user.email %></p>
+  <p>Phone Number: <%= number_to_phone(current_user.phone, area_code: true) %></p>
 
-  <%= link_to "Edit profile", edit_user_path(@user) %><br /><br />
+  <%= link_to "Edit profile", edit_user_path(current_user) %><br /><br />
 
   <h2> My Reservations</h2>
-  <% @user.reservations.each do |reservation| %>
+  <% current_user.reservations.each do |reservation| %>
   <%= link_to "Delete", restaurant_reservation_path(reservation.restaurant, reservation), method: :delete %>
   <ul>
     <li>
@@ -26,7 +26,7 @@
   <br />
   <h2>My Restaurants | <%= link_to "Create New Restaurant", new_restaurant_path %></h2></br>
 
-  <% @user.owned_restaurants.each do |owned| %>
+  <% current_user.owned_restaurants.each do |owned| %>
     <%= link_to owned.name, restaurant_path(owned) %></br>
     <ul>
       <% owned.reservations.each do |reservation| %>
