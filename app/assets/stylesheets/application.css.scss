@@ -15,3 +15,12 @@
  */
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Raleway|Open+Sans+Condensed:300|Poiret+One|Amatic+SC:400,700);
+
+#notice, #alert, #error {
+  padding-left: 15%;
+  color: red;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+
+}
